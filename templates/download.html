@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <link href="../static/main.css" rel="stylesheet">
+</head>
+<style>
+        table
+        {
+            width: auto;
+            font: 17px Calibri;
+        }
+        table, th, td
+        {
+            border: solid 1px #DDD;
+            border-collapse: collapse;
+            padding: 2px 3px;
+            text-align: center;
+        }
+        table.center {
+            margin-left: auto;
+            margin-right: auto;`
+        }
+    </style>
+<body>
+    <table id="tab" class="center">
+        <tr>
+            {% for header in headings %}
+            <th>{{ header }}</th>
+            {% endfor%}
+        </tr>
+        {% for row in data %}
+        <tr>
+            {% for cell in row %}
+            <td>{{ cell }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+<div class="download">
+    <a href={{url_for('download')}} target="blank"> <button class="btn"> Download </button> </a>
+</div>
+</html>
